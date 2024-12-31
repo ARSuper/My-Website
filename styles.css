@@ -27,11 +27,11 @@ header {
 /* Top-left site title styles */
 .site-title {
     font-family: Arial, sans-serif;
-    text-transform: lowercase; /* Lowercase for the site title */
+    text-transform: capitalize;
     font-size: 1.0rem; /* Smaller font size */
     font-weight: 300; /* Thin font */
-    margin-left: 13px;
-    margin-top: 15px;
+    margin-left: 5px;
+    margin-top: 18px;
     letter-spacing: 1.5px; /* Slightly closer letter spacing */
     color: #333333;
     position: absolute;
@@ -43,10 +43,10 @@ header {
 /* Top-right logo styles */
 .logo {
     margin-right: 22px;
-    height: 70px;
-    width: auto;
+    height: 100px;
+    width: 100px;
     position: absolute;
-    top: 10px;
+    top: 0px;
     right: 20px;
 }
 
