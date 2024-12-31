@@ -1,33 +1,53 @@
 /* General Styles */
 body {
-    font-family: 'Quicksand', sans-serif;
+    font-family: Arial, sans-serif; /* Default font for everything */
     margin: 0;
     padding: 0;
-    background-color: #f1b1e4;
+    background-color: #eaf081;
     color: #333333;
+    text-transform: uppercase; /* Makes all text uppercase by default */
+    letter-spacing: 2px; /* Spaces out letters for general text */
+    font-weight: 300; /* Thin font weight for general text */
 }
 
+/* Header - Adjusted for logo and title swap */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #f8f8f8;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 40px 20px;
+    background-color: #eaf081;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.947);
     position: fixed;
     width: 100%;
-    top: 0;
+    top: 10;
     z-index: 10;
 }
 
+/* Top-left site title styles */
 .site-title {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-family: Arial, sans-serif;
+    text-transform: lowercase; /* Lowercase for the site title */
+    font-size: 1.0rem; /* Smaller font size */
+    font-weight: 300; /* Thin font */
+    margin-left: 13px;
+    margin-top: 15px;
+    letter-spacing: 1.5px; /* Slightly closer letter spacing */
+    color: #333333;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    text-align: left;
 }
 
+/* Top-right logo styles */
 .logo {
-    height: 50px;
+    margin-right: 22px;
+    height: 70px;
     width: auto;
+    position: absolute;
+    top: 10px;
+    right: 20px;
 }
 
 /* Container for Main Content */
@@ -40,77 +60,121 @@ header {
 
 /* Sidebar */
 .sidebar {
-    width: 8%;
-    background-color: #f8f8f8;
+    width: 15%;
+    background-color: #eaf081;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-shadow: 2px 0px 0px rgba(0, 0, 0, 0.851);
     position: fixed;
     left: 0;
-    height: 100%;
+    height: 200%;
     z-index: 5;
 }
 
 .text-section {
+    margin-left: 0;
     writing-mode: vertical-rl;
-    transform: rotate(180deg);
+    transform: none;
     font-size: 1.5rem;
-    font-weight: 600;
-    letter-spacing: 2px;
+    font-weight: 400;
+    letter-spacing: 3px;
     color: #333333;
-    margin: 10px 0;
+    margin: 10px 0px;
     text-align: center;
 }
 
-/* Sidebar FOLLOW ME Text */
+/* FOLLOW ME text styles */
 .follow-me {
-    margin-bottom: 80px;
+    font-size: 0.3rem; /* Smaller font size */
+    font-weight: 400; /* Slightly thicker for readability */
+    letter-spacing: 1px; /* Slightly closer spacing */
+    color: #333333; /* Matches design */
+    writing-mode: vertical-rl; /* Keeps text vertical */
+    text-align: center;
+    margin-top: 20px; /* Adjust spacing if needed */
 }
 
+/* Container for the icons (YouTube, SoundCloud, flat logo) */
 .icons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex; /* Flexbox for vertical alignment */
+    flex-direction: column; /* Align the icons vertically */
+    justify-content: flex-start; /* Align icons to the top */
+    align-items: center; /* Center the icons horizontally */
+    gap: 10px; /* Space between icons */
+    margin-top: 10px; /* Space between the text and the icons */
 }
 
-.icons a {
-    display: block;
-    margin: 10px 0;
-    text-decoration: none;
-    color: #666666;
-    font-size: 1.2rem;
+/* Icon styles */
+.icons img {
+    width: 30px;  /* Adjust icon size */
+    height: 30px; /* Maintain aspect ratio */
 }
 
 .icons a:hover {
     color: #000000;
 }
 
-/* Main Text Sections */
+/* Main Content */
 .main {
-    margin-left: 8%;
-    width: 92%;
+    margin-top: 500px; /* Moves the entire content down by 50px */
+    margin-left: 18%; /* Adjust for sidebar width */
+    width: 78%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding-left: 40px;
-    gap: 60px; /* Adjust spacing between sections */
+    padding: 40px;
+    gap: 300px; /* Adjust spacing between sections */
 }
 
-.welcome {
+.text-section p {
     font-size: 2.5rem;
-    margin-top: 80px;
+    margin: 0;
+    text-transform: uppercase;
+    color: #333333;
 }
 
-.music {
-    font-size: 2.5rem;
-    margin-top: 100px; /* Adjust spacing for alignment */
+/* Body Setup */
+body {
+    display: flex;
+    flex-direction: column; /* Stack header, main, and footer vertically */
+    min-height: 100vh; /* Full viewport height */
+    margin: 0;
 }
 
-.programming-projects {
-    font-size: 2.5rem;
-    margin-top: 100px; /* Adjust spacing for alignment */
+/* Main Content */
+.main {
+    flex: 1; /* This makes the main content take up all available space */
+    margin-left: 22%; /* Adjust for your sidebar width */
+    padding-bottom: 80px; /* Leave space above the footer */
+}
+
+/* Footer Styles */
+footer {
+    margin-top: 800px;
+    background-color: #333333; /* Dark background */
+    color: #ffffff; /* Light text */
+    text-align: right; /* Centered content */
+    padding: 20px;
+    font-size: 0.9rem;
+    letter-spacing: 1px; /* Space out letters */
+    width: 100%; /* Full width */
+}
+
+footer .contact a {
+    color: #e4f3b8; /* Themed link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+}
+
+footer .contact a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+footer .copyright {
+    margin-top: 10px; /* Spacing between sections */
+    font-size: 0.8rem; /* Slightly smaller */
 }
