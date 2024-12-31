@@ -1,98 +1,116 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #bb7bbe;
+    background-color: #f1b1e4;
     color: #333333;
 }
 
 header {
-    text-align: center;
-    padding: 20px;
-    background-color: #000000;
-    color: #ffffff;
-}
-
-header h1 {
-    font-family: 'Georgia', serif;
-    font-size: 2.5em;
-    margin: 0;
-}
-
-header p {
-    font-size: 1.2em;
-}
-
-nav {
-    background-color: #333333;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 10px;
     display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 1.2em;
-}
-
-nav ul li a:hover {
-    color: #ffcc00;
-}
-
-main {
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
-    max-width: 900px;
-    margin: 0 auto;
+    background-color: #f8f8f8;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
 }
 
-main section {
-    margin-bottom: 30px;
+.site-title {
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
-h2 {
-    font-family: 'Georgia', serif;
-    color: #000000;
+.logo {
+    height: 50px;
+    width: auto;
 }
 
-a {
-    color: #000000;
-    text-decoration: underline;
+/* Container for Main Content */
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    padding-top: 80px; /* Adjust for header */
 }
 
-a:hover {
-    color: #ffcc00;
+/* Sidebar */
+.sidebar {
+    width: 8%;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    left: 0;
+    height: 100%;
+    z-index: 5;
 }
 
-footer {
+.text-section {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #333333;
+    margin: 10px 0;
     text-align: center;
-    padding: 15px;
-    background-color: #000000;
-    color: #ffffff;
-    font-size: 0.9em;
 }
 
-footer p {
-    margin: 0;
+/* Sidebar FOLLOW ME Text */
+.follow-me {
+    margin-bottom: 80px;
 }
 
-/* Piano Key Background for Home Section */
-#home {
-    background: url('piano-keys.jpg') no-repeat center center;
-    background-size: cover;
-    color: #ffffff;
-    text-shadow: 1px 1px 2px #000000;
-    padding: 40px;
-    border-radius: 5px;
+.icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icons a {
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+    color: #666666;
+    font-size: 1.2rem;
+}
+
+.icons a:hover {
+    color: #000000;
+}
+
+/* Main Text Sections */
+.main {
+    margin-left: 8%;
+    width: 92%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 40px;
+    gap: 60px; /* Adjust spacing between sections */
+}
+
+.welcome {
+    font-size: 2.5rem;
+    margin-top: 80px;
+}
+
+.music {
+    font-size: 2.5rem;
+    margin-top: 100px; /* Adjust spacing for alignment */
+}
+
+.programming-projects {
+    font-size: 2.5rem;
+    margin-top: 100px; /* Adjust spacing for alignment */
 }
