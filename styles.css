@@ -1,3 +1,10 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
 /* General Styles */
 body {
     font-family: Arial, sans-serif; /* Default font for everything */
@@ -79,7 +86,7 @@ picture {
 
 /* Sidebar */
 .sidebar {
-    width: 15%;
+    width: 5%;
     background-color: #eaf081;
     display: flex;
     flex-direction: column;
@@ -94,14 +101,14 @@ picture {
 }
 
 .text-section {
-    margin-left: 0;
+    margin-left: -200px;
     writing-mode: vertical-rl;
     transform: none;
     font-size: 1.5rem;
     font-weight: 400;
     letter-spacing: 3px;
     color: #333333;
-    margin: 10px 0px;
+    margin: 5px 0px;
     text-align: center;
 }
 
@@ -139,8 +146,7 @@ picture {
 /* Main Content */
 .main {
     margin-top: 500px; /* Moves the entire content down by 50px */
-    margin-left: 18%; /* Adjust for sidebar width */
-    width: 78%;
+    width: 20%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -149,9 +155,14 @@ picture {
     gap: 300px; /* Adjust spacing between sections */
 }
 
+.welcome, .programming-projects, .music {
+    margin-left: -175px;  /* or any other value to move the sections to the left */
+    padding-left: 0;  /* Adjust padding if needed */
+}
+
 .text-section p {
     font-size: 2.5rem;
-    margin: 0;
+    margin: 0px;
     text-transform: uppercase;
     color: #333333;
 }
@@ -176,8 +187,8 @@ footer {
     margin-top: 2000px;
     background-color: #333333; /* Dark background */
     color: #ffffff; /* Light text */
-    text-align: right; /* Centered content */
-    padding: 20px;
+    text-align: center; /* Centered content */
+    padding: 70px;
     font-size: 0.9rem;
     letter-spacing: 1px; /* Space out letters */
     width: 100%; /* Full width */
@@ -259,8 +270,8 @@ footer .copyright {
     transition: background-color 0.3s ease; /* Smooth transition for hover effect */
 }
 
-/* General Mobile Styles */
-@media (max-width: 2000px) {
+/* MOBILE STYLING ONLY */
+@media (max-width: 768px) {
     /* Adjust body layout for smaller screens */
     body {
         overflow-x: auto;
@@ -306,38 +317,38 @@ footer .copyright {
     }
 
     /* FOLLOW ME text styles */
-.follow-me {
-    font-size: 0.8rem; /* Larger font size for "Follow Me" */
-    font-weight: 400; /* Slightly thicker for readability */
-    letter-spacing: 1px; /* Slightly closer spacing */
-    color: #333333; /* Matches design */
-    writing-mode: vertical-rl; /* Keeps text vertical */
-    text-align: center;
-    margin-top: 35px; /* Adjust spacing if needed */
-    display: flex;
-    flex-direction: column; /* Stack "Follow Me" and icons vertically */
-    align-items: center; /* Center the text and icons */
-}
+    .follow-me {
+        font-size: 0.8rem; /* Larger font size for "Follow Me" */
+        font-weight: 400; /* Slightly thicker for readability */
+        letter-spacing: 1px; /* Slightly closer spacing */
+        color: #333333; /* Matches design */
+        writing-mode: vertical-rl; /* Keeps text vertical */
+        text-align: center;
+        margin-top: 35px; /* Adjust spacing if needed */
+        display: flex;
+        flex-direction: column; /* Stack "Follow Me" and icons vertically */
+        align-items: right; /* Center the text and icons */
+    }
 
-/* Container for the icons (YouTube, SoundCloud, flat logo) */
-.icons {
-    display: flex; /* Flexbox for vertical alignment */
-    flex-direction: column; /* Align the icons vertically */
-    justify-content: flex-start; /* Align icons to the top */
-    align-items: center; /* Center the icons horizontally */
-    gap: 10px; /* Space between icons */
-    margin-top: 0px; /* Space between the text and the icons */
-}
+    /* Container for the icons (YouTube, SoundCloud, flat logo) */
+    .icons {
+        display: flex; /* Flexbox for vertical alignment */
+        flex-direction: column; /* Align the icons vertically */
+        justify-content: flex-start; /* Align icons to the top */
+        align-items: center; /* Center the icons horizontally */
+        gap: 10px; /* Space between icons */
+        margin-top: 0px; /* Space between the text and the icons */
+    }
 
-/* Icon styles */
-.icons img {
-    width: 40px;  /* Adjust icon size */
-    height: 40px; /* Maintain aspect ratio */
-}
+    /* Icon styles */
+    .icons img {
+        width: 40px;  /* Adjust icon size */
+        height: 40px; /* Maintain aspect ratio */
+    }
 
-.icons a:hover {
-    color: #000000;
-}
+    .icons a:hover {
+        color: #000000;
+    }
 
     /* Main content adjustments */
     .content {
@@ -356,48 +367,82 @@ footer .copyright {
         height: auto;
     }
 
+    /* Full-Screen Navigation Menu */
     .nav-menu {
         position: absolute; /* Keeps navbar fixed in its section */
-        right: 0; /* Position to the right */
+        right: 0; /* Align to the right */
         top: 0; /* Align to the top */
-        width: auto;
-        height: 50%; /* Full height of the viewport */
-        background: #eaf081; /* Optional: Add a background for contrast */
+        width: 0; /* Fully collapse the menu by default */
+        height: 0; /* Fully collapse the menu by default */
+        background: #000000; /* Optional: Add a background for contrast */
+        opacity: 1;
         z-index: 10; /* Ensure it stays above other elements */
-        display: none;
+        display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        padding: 1px; /* Add padding for spacing */
-        margin-top: 118px;
+        padding: 0; /* Remove padding to ensure no content is visible */
+        margin: 0; /* Remove margins */
+        overflow: hidden; /* Hide content that overflows the container */
+        transition: all 0.3s ease; /* Smooth transition for opening/closing */
     }
 
-    /* Style for the menu toggle button */
-    .menu-toggle {
-        display: block;
-        background-color: transparent;
-        height: 3px;
-        width: 2px;
-        cursor: pointer;
-        position: fixed;
-        top: 3px;
-        left: 3px;
-        z-index: 11; /* Ensure it's above the navbar */
-    }
-
-    .container {
-        flex-direction: column;
+    .nav-menu.visible {
+        width: 250px; /* Set the desired width when menu is open */
+        height: 100%; /* Full height of the viewport */
+        padding: 10px; /* Add padding for spacing when menu is open */
+        overflow: auto; /* Allow scrolling when menu is open */
     }
 
     .nav-menu ul {
-        display: flex;
-        flex-direction: column; /* Stack links vertically */
-        gap: 0px;
+        list-style: none;
         padding: 0;
-        list-style-type: none;
+        margin: 0;
+        text-align: center;
+    }
+
+    .nav-menu li {
+        margin: 15px 0; /* Spacing between items */
     }
 
     .nav-menu a {
-        font-size: 1rem;
+        font-size: 1.5rem;
+        color: white;
+        text-decoration: none;
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 600;
+    }
+
+    .nav-menu a:hover {
+        text-decoration: underline;
+    }
+
+    .nav-menu.visible {
+        right: 0; /* Slide into view */
+    }
+
+    /* Menu toggle button */
+    .menu-toggle {
+        color: #000000;
+        display: block;
+        background-color: transparent;
+        font-size: 50px;
+        cursor: pointer;
+        position: fixed;
+        margin-top: -45px;
+        left: -40px;
+        z-index: 1100; /* Ensure it's above other elements */
+    }
+
+    /* Close button inside the menu (optional) */
+    .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
     }
 
     /* Rotated Sections */
@@ -407,7 +452,8 @@ footer .copyright {
 
     .text-section {
         writing-mode: vertical-rl;
-        transform: rotate(0deg); /* Flip text for proper reading */
+        transform: rotate(0deg); /* Ensure proper orientation */
+        margin-left: -20px;
         margin-bottom: 20px;
         font-size: 1rem;
     }

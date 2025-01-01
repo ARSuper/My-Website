@@ -43,20 +43,20 @@
         <!-- Main Text Sections -->
         <div class="main">
             <img src="" alt="Anika Picture" class="picture">
-            <div class="text-section welcome">
+            <div class="text-section welcome" id="welcome">
                 <p>WELCOME</p>
             </div>
-            <div class="text-section music">
+            <div class="text-section music", id="music">
                 <p>MUSIC</p>
             </div>
-            <div class="text-section programming-projects">
+            <div class="text-section programming-projects", id="programming-projects">
                 <p>PROGRAMMING PROJECTS</p>
             </div>
         </div>
     </div>
 
     <!-- Navigation Menu (Right) -->
-    <div class="nav-menu">
+    <div class="nav-menu", id="navMenu">
         <ul>
             <li><a href="#welcome">Welcome</a></li>
             <li><a href="#music">Music</a></li>
@@ -67,6 +67,17 @@
         </ul>
     </div>
 </div>
+<!-- Add script here -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('visible'); // Toggle a "visible" class
+        });
+    });
+</script>
 </body>
 <footer>
     <div class="contact">

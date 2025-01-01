@@ -1,26 +1,35 @@
-document.addEventListener("scroll", () => {
-    const news = document.querySelector(".scroll-text.news");
-    const discography = document.querySelector(".scroll-text.discography");
+document.addEventListener("DOMContentLoaded", () => {
+    // Scroll-based animation for .scroll-text elements
+    document.addEventListener("scroll", () => {
+        const scrollElements = document.querySelectorAll(".scroll-text");
+        const windowHeight = window.innerHeight;
 
-    const windowHeight = window.innerHeight;
-    const newsOffset = news.getBoundingClientRect().top;
-    const discographyOffset = discography.getBoundingClientRect().top;
+        scrollElements.forEach(element => {
+            const elementOffset = element.getBoundingClientRect().top;
 
-    if (newsOffset < windowHeight - 100) {
-        news.classList.add("visible");
-    }
+            if (elementOffset < windowHeight - 100) {
+                element.classList.add("visible");
+            }
+        });
+    });
 
-    if (discographyOffset < windowHeight - 100) {
-        discography.classList.add("visible");
-    }
-    // Get elements
-    const menuToggle = document.getElementById('menuToggle');
-    const navMenu = document.getElementById('navMenu');
+    // Get elements for navigation menu
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
 
-    // Toggle menu on button click
-    menuToggle.addEventListener('click', () => {
-    // Toggle display between 'none' and 'block'
-    navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
+    // Toggle menu visibility on button click
+    menuToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        const isExpanded = navMenu.classList.contains("active");
+        menuToggle.setAttribute("aria-expanded", isExpanded);
+    });
+
+    // Close menu when clicking outside (optional feature)
+    document.addEventListener("click", (event) => {
+        if (!navMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+            navMenu.classList.remove("visible");
+            // menuToggle.setAttribute("aria-expanded", "false");
+        }
+    });
 });
 
-});
