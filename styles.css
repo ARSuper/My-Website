@@ -50,6 +50,11 @@ header {
     right: 20px;
 }
 
+/* Picture of Anika */
+picture {
+    margin-top: 10px;
+}
+
 /* Container for Main Content */
 .container {
     display: flex;
@@ -109,8 +114,8 @@ header {
 
 /* Icon styles */
 .icons img {
-    width: 30px;  /* Adjust icon size */
-    height: 30px; /* Maintain aspect ratio */
+    width: 40px;  /* Adjust icon size */
+    height: 40px; /* Maintain aspect ratio */
 }
 
 .icons a:hover {
@@ -154,7 +159,7 @@ body {
 
 /* Footer Styles */
 footer {
-    margin-top: 800px;
+    margin-top: 1000px;
     background-color: #333333; /* Dark background */
     color: #ffffff; /* Light text */
     text-align: right; /* Centered content */
@@ -177,4 +182,39 @@ footer .contact a:hover {
 footer .copyright {
     margin-top: 10px; /* Spacing between sections */
     font-size: 0.8rem; /* Slightly smaller */
+}
+
+/* Navigation Menu */
+.nav-menu {
+    position: fixed;
+    right: 0;
+    top: 80px; /* Adjust based on header height */
+    width: 200px;
+    background-color: #eaf081;
+    box-shadow: 0px 0 0px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 5;
+}
+
+.nav-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin-bottom: 20px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-menu a:hover {
+    color: #000000;
 }
