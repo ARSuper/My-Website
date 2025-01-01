@@ -3,11 +3,15 @@ body {
     font-family: Arial, sans-serif; /* Default font for everything */
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     background-color: #eaf081;
     color: #333333;
     text-transform: uppercase; /* Makes all text uppercase by default */
     letter-spacing: 2px; /* Spaces out letters for general text */
     font-weight: 300; /* Thin font weight for general text */
+    display: flex;
+    flex-direction: column; /* Stack header, main, and footer vertically */
+    min-height: 100vh; /* Full viewport height */
 }
 
 /* Header - Adjusted for logo and title swap */
@@ -42,12 +46,22 @@ header {
 
 /* Top-right logo styles */
 .logo {
-    margin-right: 22px;
-    height: 100px;
-    width: 100px;
+    margin-right: 25px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    height: 70px;
+    width: 70px;
     position: absolute;
     top: 0px;
     right: 20px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 /* Picture of Anika */
@@ -159,7 +173,7 @@ body {
 
 /* Footer Styles */
 footer {
-    margin-top: 1000px;
+    margin-top: 2000px;
     background-color: #333333; /* Dark background */
     color: #ffffff; /* Light text */
     text-align: right; /* Centered content */
@@ -204,18 +218,197 @@ footer .copyright {
 }
 
 .nav-menu li {
-    margin-bottom: 20px;
+    margin: 10px 0;
+    position: relative; /* For positioning the black box */
 }
 
 .nav-menu a {
     text-decoration: none;
-    color: #333333;
-    font-size: 1.2rem;
-    font-weight: 400;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    color: black;
+    font-size: 18px;
+    padding: 5px 10px;
+    display: inline-block;
+    transition: color 0.3s ease; /* Smooth transition for text color */
 }
 
-.nav-menu a:hover {
+.nav-menu li:hover::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    z-index: -1; /* Places the box behind the text */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-menu li:hover a {
+    color: white; /* Change text color when hovered */
+}
+
+.nav-menu li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    z-index: -1; /* Keeps the box behind the text */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* General Mobile Styles */
+@media (max-width: 2000px) {
+    /* Adjust body layout for smaller screens */
+    body {
+        overflow-x: auto;
+        display: flex;
+        flex-wrap: nowrap; /* Prevent wrapping for horizontal content */
+        flex-direction: row; /* Align content horizontally */
+        width: 100%; /* Ensure full width is used */
+        flex-direction: column; /* Ensure stacked layout */
+        text-transform: none; /* Disable uppercase for better readability */
+        font-size: 0.9rem; /* Adjust font size */
+        letter-spacing: 1px; /* Narrower letter spacing */
+        margin: 0;
+        padding: 0;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0; /* Prevent content from shrinking on smaller screens */
+        width: 100vw; /* Ensure content fits in one viewport width */
+    }
+
+    /* Header adjustments */
+    header {
+        display: flex;
+        justify-content: space-between; /* Title on the left, logo on the right */
+        align-items: center;
+        padding: 10px;
+    }
+
+    .site-title {
+        font-size: 1.0rem; /* Increase text size for better visibility */
+        position: static; /* Allow natural positioning */
+        margin-bottom: -30px;
+        text-align: left; /* Center-align for mobile */
+    }
+
+    .logo {
+        height: 80px; /* Adjust logo size */
+        width: 80px;
+        margin: center; /* Center logo */
+        position: static; /* Allow flow with the header */
+    }
+
+    /* FOLLOW ME text styles */
+.follow-me {
+    font-size: 0.8rem; /* Larger font size for "Follow Me" */
+    font-weight: 400; /* Slightly thicker for readability */
+    letter-spacing: 1px; /* Slightly closer spacing */
+    color: #333333; /* Matches design */
+    writing-mode: vertical-rl; /* Keeps text vertical */
+    text-align: center;
+    margin-top: 35px; /* Adjust spacing if needed */
+    display: flex;
+    flex-direction: column; /* Stack "Follow Me" and icons vertically */
+    align-items: center; /* Center the text and icons */
+}
+
+/* Container for the icons (YouTube, SoundCloud, flat logo) */
+.icons {
+    display: flex; /* Flexbox for vertical alignment */
+    flex-direction: column; /* Align the icons vertically */
+    justify-content: flex-start; /* Align icons to the top */
+    align-items: center; /* Center the icons horizontally */
+    gap: 10px; /* Space between icons */
+    margin-top: 0px; /* Space between the text and the icons */
+}
+
+/* Icon styles */
+.icons img {
+    width: 40px;  /* Adjust icon size */
+    height: 40px; /* Maintain aspect ratio */
+}
+
+.icons a:hover {
     color: #000000;
+}
+
+    /* Main content adjustments */
+    .content {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .picture {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .picture img {
+        max-width: 100%; /* Responsive image */
+        height: auto;
+    }
+
+    .nav-menu {
+        position: absolute; /* Keeps navbar fixed in its section */
+        right: 0; /* Position to the right */
+        top: 0; /* Align to the top */
+        width: auto;
+        height: 50%; /* Full height of the viewport */
+        background: #eaf081; /* Optional: Add a background for contrast */
+        z-index: 10; /* Ensure it stays above other elements */
+        display: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1px; /* Add padding for spacing */
+        margin-top: 118px;
+    }
+
+    /* Style for the menu toggle button */
+    .menu-toggle {
+        display: block;
+        background-color: transparent;
+        height: 3px;
+        width: 2px;
+        cursor: pointer;
+        position: fixed;
+        top: 3px;
+        left: 3px;
+        z-index: 11; /* Ensure it's above the navbar */
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .nav-menu ul {
+        display: flex;
+        flex-direction: column; /* Stack links vertically */
+        gap: 0px;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .nav-menu a {
+        font-size: 1rem;
+    }
+
+    /* Rotated Sections */
+    .sections {
+        margin-top: 20px;
+    }
+
+    .text-section {
+        writing-mode: vertical-rl;
+        transform: rotate(0deg); /* Flip text for proper reading */
+        margin-bottom: 20px;
+        font-size: 1rem;
+    }
 }

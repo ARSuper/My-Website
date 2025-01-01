@@ -13,4 +13,14 @@ document.addEventListener("scroll", () => {
     if (discographyOffset < windowHeight - 100) {
         discography.classList.add("visible");
     }
+    // Get elements
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    // Toggle menu on button click
+    menuToggle.addEventListener('click', () => {
+    // Toggle display between 'none' and 'block'
+    navMenu.style.display = navMenu.style.display === 'block' ? 'none' : 'block';
+});
+
 });

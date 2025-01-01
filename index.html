@@ -7,12 +7,21 @@
     <link rel="icon" href="https://www.favicon.cc/logo3d/121615.png" type="image/png"> <!-- Favicon -->
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <script>
+        // Toggle navigation menu on mobile
+        function toggleNav() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        }
+    </script>
 </head>
 <body>
     <!-- Logo and Site Title -->
     <header>
         <div class="site-title">Anika Radhakrishnan Official Site</div>
-        <img src="file:///Users/anikaradhakrishnan/Downloads/Untitled_design__1_-removebg-preview.png" alt="Anika's Logo" class="logo">
+        <img src="https://www.pngkey.com/png/full/828-8280002_ar-png-electrical-and-electronics-icon.png" alt="Anika's Logo" class="logo">
+        <!-- Hamburger Icon for Mobile -->
+        <button class="menu-toggle" id="menuToggle" onclick="toggleNav()">☰</button>
     </header>
 
     <!-- Main Content -->
