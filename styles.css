@@ -3,8 +3,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
-
 /* General Styles */
 body {
     font-family: Arial, sans-serif; /* Default font for everything */
@@ -375,7 +373,7 @@ footer .copyright {
         width: 0; /* Fully collapse the menu by default */
         height: 0; /* Fully collapse the menu by default */
         background: #000000; /* Optional: Add a background for contrast */
-        opacity: 1;
+        opacity: 0.75;
         z-index: 10; /* Ensure it stays above other elements */
         display: flex;
         flex-direction: column;
@@ -388,7 +386,7 @@ footer .copyright {
 
     .nav-menu.visible {
         width: 250px; /* Set the desired width when menu is open */
-        height: 100%; /* Full height of the viewport */
+        height: 60%; /* Full height of the viewport */
         padding: 10px; /* Add padding for spacing when menu is open */
         overflow: auto; /* Allow scrolling when menu is open */
     }
