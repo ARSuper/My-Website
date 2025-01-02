@@ -211,7 +211,7 @@ footer .copyright {
     font-weight: bold;
     margin-bottom: 10px;
     color: #333;
-    margin-left: -900px;
+    margin-left: -1250px;
 }
 
 /* Content inside each section */
@@ -224,7 +224,7 @@ footer .copyright {
 
 /* Adjustments for each section for visual distinction */
 .welcome-header {
-    margin-right: -150px;
+    margin-right: -900px;
 }
 
 .music-header {
