@@ -206,34 +206,44 @@ footer .copyright {
 }
 
 /* Specific section headers */
-.welcome-header, .music-header, .programming-header {
+.welcome-header {
     font-size: 2rem;
-    font-weight: bold;
+    font-weight: 400;
     margin-bottom: 10px;
     color: #333;
-    margin-left: -1250px;
+    margin-left: -1225px;
+}
+
+.music-header {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #333;
+    margin-left: -1225px;
+}
+
+.programming-header {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #333;
+    margin-left: -1225px;
 }
 
 /* Content inside each section */
 .welcome-content, .music-content, .programming-content {
-    font-size: 1.2rem;
+    font-size: 1.0rem;
     color: #666;
-    transform: rotate(270deg);
-    text-align: right;
+    transform: rotate(270deg); /* Rotate text */
+    text-align: center;
+    position: relative; /* Allow precise positioning */
+    white-space: nowrap; /* Prevent wrapping */
+    line-height: 1.5; /* Adjust spacing between lines */
+    margin: 0; /* Reset any conflicting margins */
+    top: -600px; /* Move up */
+    left: -200px; /* Move left */
 }
 
-/* Adjustments for each section for visual distinction */
-.welcome-header {
-    margin-right: -900px;
-}
-
-.music-header {
-      /* Light green */
-}
-
-.programming-header {
-      /* Light yellow */
-}
 
 /* Navigation Menu */
 .nav-menu {
