@@ -172,14 +172,20 @@ body {
 
 /* Footer Styles */
 footer {
-    margin-top: 6000px;
     background-color: #333333; /* Dark background */
     color: #ffffff; /* Light text */
     text-align: center; /* Centered content */
-    padding: 70px;
+    padding: 70px 0; /* Adjust padding as needed */
     font-size: 0.9rem;
     letter-spacing: 1px; /* Space out letters */
-    width: 100%; /* Full width */
+    position: absolute; /* Ensure it covers full width */
+    left: 10px; /* Align to the left edge of the viewport */
+    right: 0px; /* Align to the right edge of the viewport */
+    bottom: -1700px; /* Stick to the bottom of the page */
+    height: 0%; /* Adjustable height */
+    margin-bottom: -2050px;
+    width: 110%;
+    box-sizing: border-box; /* Includes padding in the width calculation */
 }
 
 footer .contact a {
@@ -211,7 +217,7 @@ footer .copyright {
     font-weight: 400;
     margin-bottom: 10px;
     color: #333;
-    margin-left: -1225px;
+    margin-left: -1270px;
 }
 
 .music-header {
@@ -219,7 +225,7 @@ footer .copyright {
     font-weight: 400;
     margin-bottom: 10px;
     color: #333;
-    margin-left: -1225px;
+    margin-left: -1270px;
 }
 
 .programming-header {
@@ -227,7 +233,7 @@ footer .copyright {
     font-weight: 400;
     margin-bottom: 10px;
     color: #333;
-    margin-left: -1225px;
+    margin-left: -1250px;
 }
 
 /* Content inside each section */
@@ -240,8 +246,57 @@ footer .copyright {
     white-space: nowrap; /* Prevent wrapping */
     line-height: 1.5; /* Adjust spacing between lines */
     margin: 0; /* Reset any conflicting margins */
-    top: -600px; /* Move up */
+    top: -250px; /* Move up */
     left: -200px; /* Move left */
+}
+
+.project-works {
+    display: flex; /* Arrange images in a row */
+    flex-direction: row; /* Horizontal alignment */
+    justify-content: center; /* Center the images */
+    align-items: center; /* Vertically center images */
+    gap: 30px; /* Add spacing between the images */
+}
+
+.image-wrapper {
+    position: relative; /* Required for positioning description */
+    display: inline-block;
+    text-align: center; /* Center text for descriptions */
+}
+
+.project-image-1,
+.project-image-2 {
+    height: 100px;
+    width: auto;
+    transform: rotate(90deg); /* No rotation for clean display */
+    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth hover effect */
+    margin: 30px;
+}
+
+.project-image-1:hover,
+.project-image-2:hover {
+    transform: scale(1.1); /* Zoom in effect */
+    filter: brightness(1.2); /* Slightly brighten on hover */
+}
+
+.image-description {
+    position: absolute;
+    bottom: -40px; /* Position below the image */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.5rem;
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Prevent interaction when hidden */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.image-wrapper:hover .image-description {
+    opacity: 1; /* Show description on hover */
+    visibility: visible; /* Make visible */
 }
 
 
@@ -304,6 +359,14 @@ footer .copyright {
     background-color: transparent;
     z-index: -1; /* Keeps the box behind the text */
     transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.project-image-1 {
+    transform: rotate(90deg);
+}
+
+.project-image-2 {
+    transform: rotate(90deg);
 }
 
 /* MOBILE STYLING ONLY */
@@ -403,43 +466,169 @@ footer .copyright {
         height: auto;
     }
 
+        /* Individual section styles */
+    .text-section {
+        width: 100%;  /* Make sure each section takes up the full width */
+        padding: 20px;  /* Add padding inside each section */
+        margin-bottom: -300px;  /* Space between sections */
+        border-radius: 8px;  /* Optional: rounded corners */
+    }
+
+    /* Specific section headers */
+    .welcome-header {
+        font-size: 2rem;
+        font-weight: 100;
+        margin-bottom: 10px;
+        color: #333;
+        margin-left: -220px;
+    }
+
+    .music-header {
+        font-size: 2rem;
+        font-weight: 400;
+        margin-top: -400px;
+        color: #333;
+        margin-left: -220px;
+    }
+
+    .programming-header {
+        font-size: 2rem;
+        font-weight: 400;
+        margin-top: -400px;
+        color: #333;
+        margin-left: -180px;
+    }
+
+    /* Content inside each section */
+    .welcome-content {
+        font-size: 1.0rem;
+        color: #666;
+        transform: rotate(270deg); /* Rotate text */
+        text-align: center;
+        position: relative; /* Allow precise positioning */
+        white-space: nowrap; /* Prevent wrapping */
+        line-height: 1.5; /* Adjust spacing between lines */
+        margin: 0; /* Reset any conflicting margins */
+        top: -570px; /* Move up */
+        left: 130px; /* Move left */
+    }
+
+    .music-content {
+        font-size: 1.0rem;
+        color: #666;
+        transform: rotate(270deg); /* Rotate text */
+        text-align: center;
+        position: relative; /* Allow precise positioning */
+        white-space: nowrap; /* Prevent wrapping */
+        line-height: 1.5; /* Adjust spacing between lines */
+        margin: 0; /* Reset any conflicting margins */
+        top: -510px; /* Move up */
+        left: 130px; /* Move left */
+    }
+
+    .programming-content {
+        font-size: 1.0rem;
+        color: #666;
+        transform: rotate(270deg); /* Rotate text */
+        text-align: center;
+        position: relative; /* Allow precise positioning */
+        white-space: nowrap; /* Prevent wrapping */
+        line-height: 1.5; /* Adjust spacing between lines */
+        margin: 0; /* Reset any conflicting margins */
+        top: -530px; /* Move up */
+        left: 130px; /* Move left */
+    }
+
+    .project-works {
+        display: flex; /* Arrange images in a row */
+        flex-direction: row; /* Horizontal alignment */
+        justify-content: center; /* Center the images */
+        align-items: center; /* Vertically center images */
+        gap: 30px; /* Add spacing between the images */
+    }
+    
+    .image-wrapper {
+        position: relative; /* Required for positioning description */
+        display: inline-block;
+        text-align: center; /* Center text for descriptions */
+    }
+    
+    .project-image-1,
+    .project-image-2 {
+        height: 100px;
+        width: auto;
+        transform: rotate(90deg); /* No rotation for clean display */
+        transition: transform 0.3s ease, filter 0.3s ease; /* Smooth hover effect */
+        margin: 30px;
+    }
+    
+    .project-image-1:hover,
+    .project-image-2:hover {
+        transform: scale(1.1); /* Zoom in effect */
+        filter: brightness(1.2); /* Slightly brighten on hover */
+    }
+    
+    .image-description {
+        position: absolute;
+        bottom: -40px; /* Position below the image */
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.5rem;
+        opacity: 0; /* Initially hidden */
+        visibility: hidden; /* Prevent interaction when hidden */
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+    
+    .image-wrapper:hover .image-description {
+        opacity: 1; /* Show description on hover */
+        visibility: visible; /* Make visible */
+    }
+    
+
     /* Full-Screen Navigation Menu */
     .nav-menu {
-        position: absolute; /* Keeps navbar fixed in its section */
-        right: 0; /* Align to the right */
-        top: 0; /* Align to the top */
+        position: fixed; /* Keep the menu positioned relative to the viewport */
+        top: 20%; /* Adjust the vertical offset to center the menu more */
+        right: 0; /* Align it to the right edge of the screen */
         width: 0; /* Fully collapse the menu by default */
-        height: 0; /* Fully collapse the menu by default */
-        background: #000000; /* Optional: Add a background for contrast */
-        opacity: 0.75;
+        height: auto; /* Adjust the height based on the content */
+        background: #000000; /* Add a contrasting background */
+        opacity: 0.9; /* Slightly more opaque for better visibility */
         z-index: 10; /* Ensure it stays above other elements */
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
-        padding: 0; /* Remove padding to ensure no content is visible */
-        margin: 0; /* Remove margins */
-        overflow: hidden; /* Hide content that overflows the container */
+        justify-content: center; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+        padding: 0;
+        margin: 0;
+        overflow: hidden; /* Hide overflowing content */
         transition: all 0.3s ease; /* Smooth transition for opening/closing */
     }
-
+    
     .nav-menu.visible {
-        width: 250px; /* Set the desired width when menu is open */
-        height: 60%; /* Full height of the viewport */
-        padding: 10px; /* Add padding for spacing when menu is open */
-        overflow: auto; /* Allow scrolling when menu is open */
+        width: 250px; /* Set width when menu is visible */
+        height: 120%; /* Take up 80% of the viewport height */
+        padding: 10px;
+        overflow: auto; /* Allow scrolling for overflow */
+        opacity: 0.85;
+        margin-top: -275px;
     }
-
+    
     .nav-menu ul {
         list-style: none;
         padding: 0;
         margin: 0;
-        text-align: center;
+        text-align: center; /* Center-align the list items */
     }
-
+    
     .nav-menu li {
-        margin: 15px 0; /* Spacing between items */
+        margin: 15px 0; /* Add spacing between menu items */
     }
-
+    
     .nav-menu a {
         font-size: 1.5rem;
         color: white;
@@ -447,13 +636,9 @@ footer .copyright {
         font-family: 'Quicksand', sans-serif;
         font-weight: 600;
     }
-
+    
     .nav-menu a:hover {
         text-decoration: underline;
-    }
-
-    .nav-menu.visible {
-        right: 0; /* Slide into view */
     }
 
     /* Menu toggle button */
@@ -486,41 +671,39 @@ footer .copyright {
         margin-top: 20px;
     }
 
-    .text-section {
-        writing-mode: vertical-rl;
-        transform: rotate(0deg); /* Ensure proper orientation */
-        margin-left: -20px;
-        margin-bottom: 20px;
-        font-size: 1rem;
-    }
+/* Footer Styles */
+footer {
+    background-color: #333333; /* Dark background */
+    color: #ffffff; /* Light text */
+    text-align: center; /* Centered content */
+    padding: 70px 0; /* Adjust padding as needed */
+    font-size: 0.9rem;
+    letter-spacing: 1px; /* Space out letters */
+    position: absolute; /* Ensure it covers full width */
+    left: 0; /* Align to the left edge of the viewport */
+    right: 0; /* Align to the right edge of the viewport */
+    bottom: 0; /* Stick to the bottom of the page */
+    height: 10%; /* Adjustable height */
+    margin-bottom: -2050px;
+    width: 180%;
+    box-sizing: border-box; /* Includes padding in the width calculation */
+}
 
+/* Contact Link Styles */
+footer .contact a {
+    color: #e4f3b8; /* Themed link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold;
+}
 
-    /* Specific section headers */
-    .welcome-header, .music-header, .programming-header {
-        font-size: 2rem;
-        font-weight: bold;
-        margin-bottom: 10px;
-        margin-left: -1000px;
-        color: #333;
-    }
+footer .contact a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
 
-    /* Content inside each section */
-    .welcome-content, .music-content, .programming-content {
-        font-size: 1.2rem;
-        color: #666;
-        transform: rotate(270deg);
-    }
+/* Copyright Section */
+footer .copyright {
+    margin-top: 10px; /* Spacing between sections */
+    font-size: 0.8rem; /* Slightly smaller text */
+}
 
-    /* Adjustments for each section for visual distinction */
-    .welcome-header {
-        margin-left: -175px;
-    }
-
-    .music-header {
-        margin-left: -175px;
-    }
-
-    .programming-header {
-        margin-left: -175px;
-    }
 }
