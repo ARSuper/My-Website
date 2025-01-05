@@ -6,28 +6,10 @@
 }
 
 html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Main container to grow and fill available space */
-.container {
-    display: flex;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
-    margin-left: auto; /* Center content if needed */
-    margin-right: auto;
-    max-width: 1200px; /* Limit content width for readability */
-    padding: 20px;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    letter-spacing: 0.1rem;
+    font-family: 'Quicksand', sans-serif;
     background-color: #f9f9f9;
     color: #333;
-    flex: 1; /* Allow the body to grow and take available space */
+    line-height: 1.6;
 }
 
 /* Header Styles */
@@ -35,14 +17,15 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #282828;
-    padding: 20px 40px;
+    background: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .site-title {
-    color: #fff;
     font-size: 1.5rem;
-    margin-left: 2rem;
+    font-weight: 600;
+    color: #333;
 }
 
 .logo {
@@ -51,10 +34,11 @@ header {
 
 .menu-toggle {
     display: none;
-    background-color: transparent;
+    background: none;
     border: none;
-    color: #fff;
     font-size: 1.5rem;
+    color: #333;
+    cursor: pointer;
 }
 
 /* Sidebar Styles */
@@ -62,315 +46,184 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 20px;
+    width: 60px;
     height: 100vh;
-    background-color: #333;
+    background: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
     color: #fff;
-    padding: 40px 20px;
 }
 
 .follow-me {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    margin-left: -1rem;
     writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    margin-bottom: 20px;
+    font-size: 1.2rem;
 }
 
 .icons a {
-    display: block;
     margin-bottom: 15px;
+    transition: transform 0.3s ease;
 }
 
 .icons img {
-    margin-left: -1rem;
-    width: 27px;
-    height: 27px;
-    transition: transform 0.3s ease;
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
 }
 
 .icons img:hover {
     transform: scale(1.2);
 }
 
-/* Main Content Styles */
+/* Main Content */
 .container {
-    display: flex;
-    margin-left: 200px;
-    padding: 40px;
+    margin-left: 80px;
+    padding: 20px;
+    max-width: 3000px;
 }
 
 .main {
-    width: 100%;
-    flex-grow: 1; /* Ensures the main content area takes the remaining space */
-}
-
-.profile-section {
-    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
 .profile-photo {
-    width: 300px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+    border: 3px solid #ddd;
 }
 
 .text-section {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
 }
 
-h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
+.text-section p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Video Section */
+.video-wrapper {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.video-wrapper iframe {
+    max-width: 100%;
+    border-radius: 8px;
+    border: none;
+}
+
+.video-description {
+    margin-top: 5px;
+    font-size: 1rem;
     color: #444;
 }
 
-p {
-    font-size: 1rem;
-    line-height: 1.6;
-}
-
-.music-works,
+/* Programming Projects */
 .project-works {
     display: flex;
-    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
-.video-wrapper,
-.project-wrapper {
-    width: 48%;
+.image-wrapper {
+    text-align: center;
+    max-width: 200px;
 }
 
-.video-wrapper iframe,
-.project-wrapper img {
-    width: 80%;  /* Scales down the images */
-    margin-left: 10px; /* Moves images a little to the left */
-    border-radius: 10px;
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-image-1,
-.project-image-2 {
-    width: 80%;  /* Scales down the images */
-    margin-left: 10px; /* Moves images a little to the left */
-    border-radius: 10px;
+.image-wrapper img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.project-image-1 {
-    margin-top: 3.4rem;
-    margin-left: -0.3rem; /* Moves images a little to the left */
-}
-
-.project-image-2 {
-    margin-left: 10rem;
-}
-
-.video-description,
-.project-description {
-    text-align: left;
+.image-description {
     margin-top: 10px;
+    font-size: 0.9rem;
+    color: #666;
 }
 
-.project-description {
-    text-align: center;
-}
-
-/* Footer Styles */
-footer {
-    color: #000000; /* White text for readability */
-    display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Spread out the content evenly */
-    align-items: center; /* Center items vertically */
-    padding: 30px; /* Adjust padding for balance */
-    width: auto; /* Ensure footer stretches across the full width */
-    position: relative; /* Keep it in the flow of the document */
-    margin-top: 50px; /* Add space below the content */
-    margin-left: 13rem; /* Move the footer further to the left */
-    text-align: center;
-    transform: translate(-120px, 60px); /* Fine-tune positioning: left and down */
-}
-
-/* Space out elements inside the footer */
-footer > div {
-    margin-left: 200px; /* Add space to the left of elements */
-    white-space: nowrap; /* Prevent wrapping */
-}
-
-footer .contact {
-    margin-left: 5px; /* Reduce spacing below the first line */
-    line-height: 1.0rem; /* Adjust line height to control vertical spacing */
-}
-
-footer .copyright {
-    margin-top: 0; /* Remove any unnecessary margin above the second line */
-    line-height: 1.0rem; /* Adjust line height for consistency */
-    margin-left: 30px;
-}
-
-/* Contact Link Styles */
-.contact a {
-    color: #61dafb; /* Light blue color for links */
-}
-
-.contact a:hover {
-    text-decoration: underline; /* Underline on hover for emphasis */
-}
-
-/* Copyright Styles */
-.copyright {
-    font-size: 0.9em; /* Make the text smaller */
-}
-
-
-/* Ensure the content does not overlap with footer */
-html, body {
-    height: 100%; /* Full height for the page */
-    margin: 0; /* Remove default margin */
-}
-
-/* Body setup with flex to manage footer placement */
-body {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack elements vertically */
-    min-height: 100vh; /* Ensure content fills the full height of the viewport */
-}
-
-/* Top-Right Navigation Menu Styles */
+/* Navigation Menu */
 .nav-menu {
-    position: absolute; /* Position relative to its containing element */
-    top: 100px; /* Position from the top */
-    right: 20px; /* Position from the right */
-    background-color: #282828; /* Dark background for the menu */
-    padding: 15px 20px; /* Add some padding for spacing */
-    border-radius: 10px; /* Rounded corners for a softer look */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
-    z-index: 1000; /* Ensure it appears above other elements */
+    display: none;
+    flex-direction: column;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    right: 20px;
+    top: 80px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.nav-menu.visible {
+    display: flex;
 }
 
 .nav-menu ul {
-    list-style-type: none; /* Remove default list styling */
-    margin: 0; /* Reset margin */
-    padding: 0; /* Reset padding */
+    list-style: none;
 }
 
-.nav-menu ul li {
-    margin-bottom: 10px; /* Add space between menu items */
+.nav-menu li {
+    margin-bottom: 10px;
 }
 
-.nav-menu ul li:last-child {
-    margin-bottom: 0; /* Remove margin for the last item */
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
 }
 
-.nav-menu ul li a {
-    text-decoration: none; /* Remove underline from links */
-    color: #fff; /* White text for contrast */
-    font-size: 1rem; /* Adjust font size */
-    font-weight: bold; /* Make the text stand out */
-    transition: color 0.3s ease; /* Smooth transition for hover effects */
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+    margin-top: auto;
 }
 
-.nav-menu ul li a:hover {
-    color: #61dafb; /* Change text color on hover */
+footer a {
+    color: #ffd700;
+    text-decoration: none;
 }
 
-
-/* Ensure Content Does Not Overlap */
-.container {
-    margin-top: 100px; /* Add spacing if necessary to avoid overlap */
+footer a:hover {
+    text-decoration: underline;
 }
 
-/* Adjust layout for screens up to 768px wide */
+/* Responsive Design */
 @media (max-width: 768px) {
-    /* Header */
-    header {
-        flex-direction: column;
-        padding: 10px 20px;
-    }
-
-    .site-title {
-        margin-left: 0;
-        text-align: center;
-    }
-
     .menu-toggle {
         display: block;
-        text-align: center;
     }
 
-    /* Sidebar */
     .sidebar {
-        width: 60px;
-        padding: 20px 10px;
+        width: 50px;
     }
 
-    .follow-me {
-        font-size: 0.9rem;
-    }
-
-    .icons img {
-        width: 20px;
-        height: 20px;
-        margin-left: 0;
-    }
-
-    /* Main content */
     .container {
-        margin-left: 0;
-        padding: 20px;
-        flex-direction: column;
-    }
-
-    .music-works, .project-works {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .video-wrapper iframe,
-    .project-wrapper img {
-        width: 100%;
-        margin-left: 0;
-    }
-
-    /* Footer */
-    footer {
-        flex-direction: column;
-        margin-left: 0;
-        text-align: center;
-        transform: none;
-    }
-
-    footer > div {
-        margin: 10px 0;
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        max-width: 300px;
-        padding: 0px;
-        background-color: #343030;
-    }
-
-    .nav-menu ul {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav-menu ul.active {
-        display: flex;
-    }
-
-    .nav-menu ul li {
-        margin-bottom: 5px;
-    }
-
-    .menu-toggle {
-        display: block;
+        margin-left: 60px;
+        padding: 10px;
     }
 }
+
 
 
