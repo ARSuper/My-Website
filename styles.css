@@ -6,7 +6,8 @@
 }
 
 body {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Arial', sans-serif;
+    letter-spacing: 0.1rem;
     background-color: #f9f9f9;
     color: #333;
 }
@@ -23,6 +24,7 @@ header {
 .site-title {
     color: #fff;
     font-size: 1.5rem;
+    margin-left: 2rem;
 }
 
 .logo {
@@ -42,7 +44,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 200px;
+    width: 20px;
     height: 100vh;
     background-color: #333;
     color: #fff;
@@ -53,6 +55,8 @@ header {
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 20px;
+    margin-left: -1rem;
+    writing-mode: vertical-rl;
 }
 
 .icons a {
@@ -61,8 +65,9 @@ header {
 }
 
 .icons img {
-    width: 30px;
-    height: 30px;
+    margin-left: -1rem;
+    width: 27px;
+    height: 27px;
     transition: transform 0.3s ease;
 }
 
@@ -118,15 +123,24 @@ p {
     width: 48%;
 }
 
-.video-wrapper iframe,
+
+.video-wrapper iframe
 .project-wrapper img {
-    width: 100%;
+    width: 80%;  /* Scales down the images */
+    margin-left: 10px; /* Moves images a little to the left */
+    border-radius: 10px;
+}
+
+.project-image-1,
+.project-image-2 {
+    width: 80%;  /* Scales down the images */
+    margin-left: 10px; /* Moves images a little to the left */
     border-radius: 10px;
 }
 
 .video-description,
 .project-description {
-    text-align: center;
+    text-align: left;
     margin-top: 10px;
 }
 
@@ -145,5 +159,6 @@ footer {
 .contact a:hover {
     text-decoration: underline;
 }
+
 
 
