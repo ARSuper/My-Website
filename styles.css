@@ -14,9 +14,12 @@ html, body {
 
 /* Main container to grow and fill available space */
 .container {
-    flex: 1; /* This allows the main content to take up remaining space */
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    margin-left: auto; /* Center content if needed */
+    margin-right: auto;
+    max-width: 1200px; /* Limit content width for readability */
+    padding: 20px;
 }
 
 body {
@@ -278,7 +281,98 @@ body {
     margin-top: 100px; /* Add spacing if necessary to avoid overlap */
 }
 
+/* Adjust layout for screens up to 768px wide */
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
 
+    .site-title {
+        margin-left: 0;
+        text-align: center;
+    }
 
+    .menu-toggle {
+        display: block;
+        text-align: center;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        width: 60px;
+        padding: 20px 10px;
+    }
+
+    .follow-me {
+        font-size: 0.9rem;
+    }
+
+    .icons img {
+        width: 20px;
+        height: 20px;
+        margin-left: 0;
+    }
+
+    /* Main content */
+    .container {
+        margin-left: 0;
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .music-works, .project-works {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .video-wrapper iframe,
+    .project-wrapper img {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+        margin-left: 0;
+        text-align: center;
+        transform: none;
+    }
+
+    footer > div {
+        margin: 10px 0;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        max-width: 300px;
+        padding: 0px;
+        background-color: #343030;
+    }
+
+    .nav-menu ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-menu ul.active {
+        display: flex;
+    }
+
+    .nav-menu ul li {
+        margin-bottom: 5px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
 
 
