@@ -223,7 +223,7 @@ footer .copyright {
     font-weight: 400;
     margin-bottom: 50px;
     position: relative; /* Enables the use of 'top' */
-    top: -1150px; /* Moves the header upwards */
+    top: -80rem; /* Moves the header upwards */
     color: #333;
     margin-left: 40px; /* Adjusts the horizontal position */
 }
