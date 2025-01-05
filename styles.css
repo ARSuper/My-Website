@@ -6,9 +6,17 @@
 }
 
 html, body {
-    height: 100%; /* Ensure full height */
+    height: 100%;
+    margin: 0;
     display: flex;
-    flex-direction: column; /* Stack items vertically */
+    flex-direction: column;
+}
+
+/* Main container to grow and fill available space */
+.container {
+    flex: 1; /* This allows the main content to take up remaining space */
+    display: flex;
+    flex-direction: column;
 }
 
 body {
@@ -170,11 +178,14 @@ footer {
     color: #ffffff; /* White text for readability */
     display: flex; /* Use flexbox for layout */
     justify-content: space-between; /* Spread out the content evenly */
-    align-items: center; /* Align items vertically */
-    padding: 20px 50px; /* Adjust padding for balance */
-    width: 100%; /* Ensure footer stretches across the full width */
+    align-items: center; /* Center items vertically */
+    padding: 30px; /* Adjust padding for balance */
+    width: 120%; /* Ensure footer stretches across the full width */
     position: relative; /* Keep it in the flow of the document */
-    margin-top: auto; /* Push footer to the bottom */
+    margin-top: 50px; /* Add space below the content */
+    margin-left: -5rem; /* Move the footer further to the left */
+    text-align: center;
+    transform: translate(-120px, 50px); /* Fine-tune positioning: left and down */
 }
 
 /* Space out elements inside the footer */
@@ -182,6 +193,17 @@ footer > div {
     margin-left: 20px; /* Add space to the left of elements */
     margin-right: 20px; /* Add space to the right of elements */
     white-space: nowrap; /* Prevent wrapping */
+}
+
+footer .contact {
+    margin-bottom: 5px; /* Reduce spacing below the first line */
+    line-height: 1.0rem; /* Adjust line height to control vertical spacing */
+}
+
+footer .copyright {
+    margin-top: 0; /* Remove any unnecessary margin above the second line */
+    line-height: 1.0rem; /* Adjust line height for consistency */
+    margin-left: -10rem;
 }
 
 /* Contact Link Styles */
@@ -198,6 +220,7 @@ footer > div {
     font-size: 0.9em; /* Make the text smaller */
 }
 
+
 /* Ensure the content does not overlap with footer */
 html, body {
     height: 100%; /* Full height for the page */
@@ -210,6 +233,51 @@ body {
     flex-direction: column; /* Stack elements vertically */
     min-height: 100vh; /* Ensure content fills the full height of the viewport */
 }
+
+/* Top-Right Navigation Menu Styles */
+.nav-menu {
+    position: absolute; /* Position relative to its containing element */
+    top: 100px; /* Position from the top */
+    right: 20px; /* Position from the right */
+    background-color: #282828; /* Dark background for the menu */
+    padding: 15px 20px; /* Add some padding for spacing */
+    border-radius: 10px; /* Rounded corners for a softer look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.nav-menu ul {
+    list-style-type: none; /* Remove default list styling */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+}
+
+.nav-menu ul li {
+    margin-bottom: 10px; /* Add space between menu items */
+}
+
+.nav-menu ul li:last-child {
+    margin-bottom: 0; /* Remove margin for the last item */
+}
+
+.nav-menu ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #fff; /* White text for contrast */
+    font-size: 1rem; /* Adjust font size */
+    font-weight: bold; /* Make the text stand out */
+    transition: color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.nav-menu ul li a:hover {
+    color: #61dafb; /* Change text color on hover */
+}
+
+
+/* Ensure Content Does Not Overlap */
+.container {
+    margin-top: 100px; /* Add spacing if necessary to avoid overlap */
+}
+
 
 
 
