@@ -25,9 +25,16 @@ header {
 }
 
 .site-title {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #333;
+    display: inline-block; /* Ensure it behaves like a block element if needed */
+    text-decoration: none; /* Remove underline from the link */
+    color: #333; /* Match your existing site color */
+    font-size: 0.8rem; /* Adjust the font size */
+    font-weight: bold; /* Keep it bold for visibility */
+}
+
+.site-title:hover {
+    text-decoration: underline; /* Add hover effect for visual feedback */
+    color: #555; /* Optional: Adjust hover color */
 }
 
 .logo {
@@ -256,7 +263,7 @@ header {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     right: 20px;
-    top: 80px;
+    top: 15px;
     padding: 20px;
     border-radius: 8px;
 }
@@ -270,7 +277,7 @@ header {
 }
 
 .nav-menu li {
-    margin-bottom: 90px;
+    margin-bottom: 2px;
 }
 
 .nav-menu a {
