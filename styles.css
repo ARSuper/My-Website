@@ -16,7 +16,7 @@ body {
     font-weight: 300; /* Thin font weight for general text */
     display: flex;
     flex-direction: column; /* Stack header, main, and footer vertically */
-    max-height: 30vh; /* Full viewport height */
+    min-height: 100%;
 }
 
 /* Main container adapts to screen size */
@@ -24,16 +24,16 @@ body {
     display: flex;
     flex: 1;
     flex-direction: column;
-    padding: 20px;
-    gap: 20px;
+    padding: 2rem;
+    gap: 2rem;
 }
 
 .profile-photo {
     height: 50%;
     width: 100%;
     position: relative;
-    top: -450px;
-    left: -200px;
+    top: -40vh;
+    left: 25%;
 
 }
 
@@ -42,12 +42,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 40px 20px;
+    padding: 2rem 1rem;
     background-color: #eaf081;
     box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.947);
     position: fixed;
     width: 100%;
-    top: 0;
+    top: 15px;
     z-index: 10;
 }
 
@@ -62,15 +62,15 @@ header {
     letter-spacing: 1.5px; /* Slightly closer letter spacing */
     color: #333333;
     position: absolute;
-    top: 10px;
-    left: 20px;
+    top: 1rem;
+    left: 2rem;
     text-align: left;
 }
 
 /* Top-right logo styles */
 .logo {
     margin-right: 25px;
-    margin-top: 5px;
+    margin-top: -8px;
     margin-bottom: 10px;
     height: 70px;
     width: 70px;
@@ -104,20 +104,21 @@ picture {
 .sidebar {
     width: 5%;
     background-color: #eaf081;
+    position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 20px;
+    padding: 1rem;
     box-shadow: 2px 0px 0px rgba(0, 0, 0, 0.851);
     position: fixed;
     left: 0;
-    height: 100vh;
+    height: 100%;
     z-index: 5;
 }
 
 .text-section {
-    margin-left: -200px;
+    margin-left: -10vw;
     writing-mode: vertical-lr;
     transform: none;
     font-size: 1.5rem;
@@ -170,17 +171,9 @@ picture {
     align-items: flex-start;
     padding: 40px;
     gap: 300px; /* Adjust spacing between sections */
+    min-height: 100vh;
 }
 
-
-
-
-/* Main Content */
-.main {
-    flex: 1; /* This makes the main content take up all available space */
-    margin-left: 22%; /* Adjust for your sidebar width */
-    padding-bottom: -500px; /* Leave space above the footer */
-}
 
 /* Footer Styles */
 footer {
@@ -193,12 +186,7 @@ footer {
     position: absolute; /* Ensure it covers full width */
     left: 10px; /* Align to the left edge of the viewport */
     right: 0px; /* Align to the right edge of the viewport */
-    bottom: -500px; /* Stick to the bottom of the page */
-    height: 0%; /* Adjustable height */
-    margin-bottom: -1550px;
-    width: 110%;
-    box-sizing: border-box; /* Includes padding in the width calculation */
-    max-height: calc(100vh - 4000px);
+    bottom: -4000px; /* Stick to the bottom of the page */
 }
 
 footer .contact a {
@@ -235,9 +223,9 @@ footer .copyright {
     font-weight: 400;
     margin-bottom: 50px;
     position: relative; /* Enables the use of 'top' */
-    top: -1000px; /* Moves the header upwards */
+    top: -1150px; /* Moves the header upwards */
     color: #333;
-    margin-left: -310px; /* Adjusts the horizontal position */
+    margin-left: 40px; /* Adjusts the horizontal position */
 }
 
 .music-header {
@@ -246,9 +234,9 @@ footer .copyright {
     font-weight: 400;
     margin-bottom: 50px;
     position: relative; /* Enables the use of 'top' */
-    top: -800px; /* Moves the header upwards */
+    top: -1000px; /* Moves the header upwards */
     color: #333;
-    margin-left: -310px;
+    margin-left: 40px;
 }
 
 .programming-header {
@@ -257,9 +245,9 @@ footer .copyright {
     font-weight: 400;
     margin-bottom: 10px;
     position: relative; /* Enables the use of 'top' */
-    top: -550px; /* Moves the header upwards */
+    top: -1700px; /* Moves the header upwards */
     color: #333;
-    margin-left: -310px;
+    margin-left: 40px;
 }
 
 /* Content inside each section */
@@ -272,73 +260,67 @@ footer .copyright {
     white-space: nowrap; /* Prevent wrapping */
     line-height: 1.5; /* Adjust spacing between lines */
     margin: 0; /* Reset any conflicting margins */
-    top: 100px; /* Move up */
-    left: -70px; /* Move left */
+    top: 30px; /* Move up */
+    left: -5rem; /* Move left */
 }
 
+/* Style for text content */
 .music-content {
     font-size: 1.0rem;
     color: #666;
     transform: rotate(270deg); /* Rotate text */
     text-align: center;
-    position: absolute; /* Allow precise positioning */
+    position: relative; /* Allow precise positioning */
     white-space: nowrap; /* Prevent wrapping */
     line-height: 1.5; /* Adjust spacing between lines */
     margin: 0; /* Reset any conflicting margins */
-    top:800px; /* Move up */
-    left: -70px; /* Move left */
+    top: -190px; /* Adjust this to move the text up */
+    left: 480px; /* Adjust horizontal position */
 }
 
+.music-content p {
+    font-size: 1.0rem;
+    color: #666;
+    transform: rotate(270deg); /* Rotate text */
+    text-align: center;
+    position: relative; /* Allow precise positioning */
+    white-space: nowrap; /* Prevent wrapping */
+    line-height: 1.5; /* Adjust spacing between lines */
+    margin: 0; /* Reset any conflicting margins */
+    top: -50px; /* Move the text up */
+    left: 140px; /* Adjust horizontal position */
+}
+
+/* Style for the video section */
 .music-works {
-    display: flex; /* Arrange images in a row */
-    flex-direction: row; /* Horizontal alignment */
-    justify-content: center; /* Center the images */
-    align-items: center; /* Vertically center images */
-    gap: 30px; /* Add spacing between the images */
+    transform: rotate(90deg);
+    display: flex;
+    justify-content: center;
+    gap: 70px; /* Spacing between videos */
+    position: relative;
+    left: 126rem; /* Adjust this to move the video section up */
+    bottom: 35rem;
 }
 
-.image-wrapper {
-    position: relative; /* Required for positioning description */
+/* Style for individual video containers */
+.music-video {
+    position: relative;
     display: inline-block;
-    text-align: center; /* Center text for descriptions */
+    text-align: center;
+    top: -400px; /* Reset this value or adjust as needed */
 }
 
-.music-image1,
-.music-image2 {
-    height: 100px;
-    width: auto;
-    transform: rotate(90deg); /* No rotation for clean display */
-    transition: transform 0.3s ease, filter 0.3s ease; /* Smooth hover effect */
-    margin: 30px;
+/* Description for each video */
+.video-description {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #666;
 }
 
-.music-image1:hover,
-.music-image2:hover {
-    transform: scale(1.1); /* Zoom in effect */
-    filter: brightness(1.2); /* Slightly brighten on hover */
+iframe {
+    border-radius: 8px; /* Optional: rounded corners for the video player */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds shadow around video */
 }
-
-.image-description {
-    position: absolute;
-    bottom: -40px; /* Position below the image */
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent black background */
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 0.5rem;
-    opacity: 0; /* Initially hidden */
-    visibility: hidden; /* Prevent interaction when hidden */
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.image-wrapper:hover .image-description {
-    opacity: 1; /* Show description on hover */
-    visibility: visible; /* Make visible */
-}
-
-
 
 
 .programming-content {
@@ -350,7 +332,7 @@ footer .copyright {
     white-space: nowrap; /* Prevent wrapping */
     line-height: 1.5; /* Adjust spacing between lines */
     margin: 0; /* Reset any conflicting margins */
-    top: 1600px; /* Move up */
+    top: 1900px; /* Move up */
     left: -70px; /* Move left */
 }
 
@@ -473,6 +455,67 @@ footer .copyright {
     transform: rotate(90deg);
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    /* Adjust layout for smaller screens */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .site-title {
+        font-size: 1.5rem;
+    }
+
+    .logo {
+        height: 50px;
+        width: 50px;
+    }
+
+    .main {
+        padding: 1.5rem;
+    }
+
+    .text-section {
+        font-size: 1rem;
+    }
+
+    .profile-photo {
+        height: 40%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .sidebar {
+        width: 20%;
+        position: static;
+        height: auto;
+        box-shadow: none;
+    }
+
+    .nav-menu {
+        width: 100%;
+        position: static;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Adjust layout for very small screens */
+    .profile-photo {
+        height: 30%;
+    }
+
+    .text-section, .follow-me {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .nav-menu {
+        padding: 1rem 0;
+    }
+}
+
 /* MOBILE STYLING ONLY */
 @media (max-width: 768px) {
     /* Adjust body layout for smaller screens */
@@ -584,7 +627,7 @@ footer .copyright {
         font-weight: 100;
         margin-bottom: 10px;
         color: #333;
-        margin-left: -220px;
+        margin-left: -720px;
     }
 
     .music-header {
@@ -626,9 +669,37 @@ footer .copyright {
         white-space: nowrap; /* Prevent wrapping */
         line-height: 1.5; /* Adjust spacing between lines */
         margin: 0; /* Reset any conflicting margins */
-        top: -510px; /* Move up */
-        left: 130px; /* Move left */
+        top: -50px; /* Move up */
+        left: 140px; /* Move left */
     }
+
+    .music-works {
+        display: flex; /* Arrange items in a row */
+        flex-direction: row;
+        justify-content: center; /* Center items horizontally */
+        align-items: flex-start; /* Align items to the top */
+        gap: 30px; /* Add space between items */
+    }
+    
+    .video-wrapper {
+        display: flex;
+        flex-direction: column; /* Stack video and text vertically */
+        align-items: center; /* Center items horizontally */
+        text-align: center; /* Align text */
+        margin-bottom: 20px; /* Space below each video-wrapper */
+    }
+    
+    .video-description {
+        font-size: 1rem; /* Text size for description */
+        color: #333;
+        margin-top: 10px; /* Space between video and description */
+    }
+    
+    iframe {
+        border-radius: 8px; /* Optional: rounded corners for the video player */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds shadow around video */
+    }
+    
 
     .programming-content {
         font-size: 1.0rem;
