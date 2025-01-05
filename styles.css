@@ -5,11 +5,18 @@
     box-sizing: border-box;
 }
 
+html, body {
+    height: 100%; /* Ensure full height */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+}
+
 body {
     font-family: 'Arial', sans-serif;
     letter-spacing: 0.1rem;
     background-color: #f9f9f9;
     color: #333;
+    flex: 1; /* Allow the body to grow and take available space */
 }
 
 /* Header Styles */
@@ -84,6 +91,7 @@ header {
 
 .main {
     width: 100%;
+    flex-grow: 1; /* Ensures the main content area takes the remaining space */
 }
 
 .profile-section {
@@ -123,8 +131,7 @@ p {
     width: 48%;
 }
 
-
-.video-wrapper iframe
+.video-wrapper iframe,
 .project-wrapper img {
     width: 80%;  /* Scales down the images */
     margin-left: 10px; /* Moves images a little to the left */
@@ -138,27 +145,72 @@ p {
     border-radius: 10px;
 }
 
+.project-image-1 {
+    margin-top: 3.4rem;
+    margin-left: -0.3rem; /* Moves images a little to the left */
+}
+
+.project-image-2 {
+    margin-left: 10rem;
+}
+
 .video-description,
 .project-description {
     text-align: left;
     margin-top: 10px;
 }
 
-/* Footer Styles */
-footer {
+.project-description {
     text-align: center;
-    background-color: #282828;
-    color: #fff;
-    padding: 20px;
 }
 
+/* Footer Styles */
+footer {
+    background-color: #282828; /* Dark background for contrast */
+    color: #ffffff; /* White text for readability */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Spread out the content evenly */
+    align-items: center; /* Align items vertically */
+    padding: 20px 50px; /* Adjust padding for balance */
+    width: 100%; /* Ensure footer stretches across the full width */
+    position: relative; /* Keep it in the flow of the document */
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+/* Space out elements inside the footer */
+footer > div {
+    margin-left: 20px; /* Add space to the left of elements */
+    margin-right: 20px; /* Add space to the right of elements */
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+/* Contact Link Styles */
 .contact a {
-    color: #61dafb;
+    color: #61dafb; /* Light blue color for links */
 }
 
 .contact a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover for emphasis */
 }
+
+/* Copyright Styles */
+.copyright {
+    font-size: 0.9em; /* Make the text smaller */
+}
+
+/* Ensure the content does not overlap with footer */
+html, body {
+    height: 100%; /* Full height for the page */
+    margin: 0; /* Remove default margin */
+}
+
+/* Body setup with flex to manage footer placement */
+body {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack elements vertically */
+    min-height: 100vh; /* Ensure content fills the full height of the viewport */
+}
+
 
 
 
