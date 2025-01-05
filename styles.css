@@ -177,36 +177,34 @@ p {
 
 /* Footer Styles */
 footer {
-    background-color: #282828; /* Dark background for contrast */
-    color: #ffffff; /* White text for readability */
+    color: #000000; /* White text for readability */
     display: flex; /* Use flexbox for layout */
     justify-content: space-between; /* Spread out the content evenly */
     align-items: center; /* Center items vertically */
     padding: 30px; /* Adjust padding for balance */
-    width: 120%; /* Ensure footer stretches across the full width */
+    width: auto; /* Ensure footer stretches across the full width */
     position: relative; /* Keep it in the flow of the document */
     margin-top: 50px; /* Add space below the content */
-    margin-left: -5rem; /* Move the footer further to the left */
+    margin-left: 13rem; /* Move the footer further to the left */
     text-align: center;
-    transform: translate(-120px, 50px); /* Fine-tune positioning: left and down */
+    transform: translate(-120px, 60px); /* Fine-tune positioning: left and down */
 }
 
 /* Space out elements inside the footer */
 footer > div {
-    margin-left: 20px; /* Add space to the left of elements */
-    margin-right: 20px; /* Add space to the right of elements */
+    margin-left: 200px; /* Add space to the left of elements */
     white-space: nowrap; /* Prevent wrapping */
 }
 
 footer .contact {
-    margin-bottom: 5px; /* Reduce spacing below the first line */
+    margin-left: 5px; /* Reduce spacing below the first line */
     line-height: 1.0rem; /* Adjust line height to control vertical spacing */
 }
 
 footer .copyright {
     margin-top: 0; /* Remove any unnecessary margin above the second line */
     line-height: 1.0rem; /* Adjust line height for consistency */
-    margin-left: -10rem;
+    margin-left: 30px;
 }
 
 /* Contact Link Styles */
