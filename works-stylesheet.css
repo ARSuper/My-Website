@@ -33,23 +33,30 @@ header .site-title {
     color: rgb(0, 0, 0);
 }
 
+.site-title:hover {
+    text-decoration: underline; /* Add hover effect for visual feedback */
+    color: #555; /* Optional: Adjust hover color */
+}
+
 header .logo {
     width: 50px;
-    margin-left: 0px;
+    margin-left: 4rem;
     height: auto;
 }
 
 /* Sidebar */
 .sidebar {
     width: 9%;
-    background-color: #474745;
-    color: white;
+    background-color: #fddeff;
+    color: rgb(0, 0, 0);
     padding: 1rem;
 }
 
 .sidebar .follow-me {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    writing-mode: vertical-rl;
+    margin-left: -0.2rem
 }
 
 .sidebar .icons {
@@ -69,7 +76,7 @@ header .logo {
 /* Content Section */
 .container {
     display: flex;
-    margin: 0rem;
+    margin: 2rem;
 }
 
 .content {
@@ -88,6 +95,7 @@ h1 {
 
 h2 {
     font-size: 1.5rem;
+    margin-top: 2rem;
     margin-bottom: 1rem;
     color: #4CAF50;
 }
@@ -170,13 +178,74 @@ footer .contact a:hover {
     .content {
         width: 100%;
     }
+
+    header .logo {
+        position: absolute;
+        top: 10px; /* Adjust the vertical position */
+        left: 225px; /* Move the logo closer to the left edge */
+    }
 }
 
 /* Navigation Menu */
 .nav-menu {
     display: none;
     flex-direction: column;
-    background: #ffffff;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed; /* Keeps the menu fixed while scrolling */
+    top: 0; /* Aligns the menu to the top of the viewport */
+    right: 0; /* Aligns the menu to the right side of the viewport */
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 1000; /* Ensures it appears above other elements */
+}
+
+.nav-menu.visible {
+    display: flex; /* Shows the menu when toggled */
+}
+
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-menu li {
+    margin-bottom: 2px;
+}
+
+.nav-menu a {
+    text-decoration: underline;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Hamburger Button (Menu Toggle) */
+.menu-toggle {
+    display: block; /* Ensure it is visible */
+    background: none; /* Remove background color */
+    border: none; /* Remove any border */
+    font-size: 1.5rem; /* Adjust the size of the icon */
+    color: black; /* Set the icon color to black */
+    cursor: pointer; /* Show pointer on hover */
+    position: fixed; /* Keeps the button fixed */
+    top: 15px; /* Adjusts vertical position */
+    right: 20px; /* Adjusts horizontal position */
+    z-index: 1001; /* Ensures it appears above the menu */
+}
+
+/* Hide menu toggle on larger screens */
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none; /* Hide on desktop */
+    }
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: fixed;
     right: 20px;
@@ -191,6 +260,8 @@ footer .contact a:hover {
 
 .nav-menu ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-menu li {
@@ -201,38 +272,4 @@ footer .contact a:hover {
     text-decoration: underline;
     color: #333;
     font-weight: 600;
-}
-
-@media (min-width: 768px) {
-    .nav-menu {
-        display: block;
-        position: relative;
-        width: 100%;
-        height: auto;
-        box-shadow: none;
-        background-color: transparent;
-        color: #333;
-        padding: 2;
-    }
-
-    .nav-menu ul {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .nav-menu a {
-        color: #333;
-        font-size: 1rem;
-    }
-
-    .nav-menu a:hover {
-        border: 1px solid #333; /* Add a border to create the box effect */
-        border-radius: 5px; /* Optional: round the corners */
-        background-color: rgba(0, 0, 0, 0.1); /* Optional: add background for a hover effect */
-    }
-
-    .menu-toggle {
-        display: none; /* Hide menu toggle on desktop */
-    }
 }
