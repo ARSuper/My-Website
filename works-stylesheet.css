@@ -1,0 +1,238 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #fddeff;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fddeff;
+    padding: 20px;
+    margin-left: -0rem;
+    width: 100%;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid black;
+}
+
+header .site-title {
+    font-size: 1.0rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+header .logo {
+    width: 50px;
+    margin-left: -200px;
+    height: auto;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 9%;
+    background-color: #474745;
+    color: white;
+    padding: 1rem;
+}
+
+.sidebar .follow-me {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.sidebar .icons {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar .icons a {
+    margin-bottom: 1rem;
+}
+
+.sidebar .icons img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Content Section */
+.container {
+    display: flex;
+    margin: 0rem;
+}
+
+.content {
+    width: 75%;
+    margin-left: 0.6rem;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #4CAF50;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 1.5rem;
+}
+
+li a {
+    font-size: 1.1rem;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+li p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .contact a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+footer .contact a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+
+    html, body {
+        font-family: 'Quicksand', sans-serif;
+        background-color: #fddeff;
+        color: #333;
+        line-height: 1.6;
+    }
+    
+    /* Header */
+    header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fddeff;
+    padding: 20px;
+    margin-left: -0rem;
+    width: 104%;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
+    border-bottom: 2px solid black;
+    }
+    .container {
+        flex-direction: column;
+        margin: 1rem;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .content {
+        width: 100%;
+    }
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: none;
+    flex-direction: column;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    right: 20px;
+    top: 15px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.nav-menu.visible {
+    display: flex;
+}
+
+.nav-menu ul {
+    list-style: none;
+}
+
+.nav-menu li {
+    margin-bottom: 2px;
+}
+
+.nav-menu a {
+    text-decoration: underline;
+    color: #333;
+    font-weight: 600;
+}
+
+@media (min-width: 768px) {
+    .nav-menu {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+        background-color: transparent;
+        color: #333;
+        padding: 2;
+    }
+
+    .nav-menu ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .nav-menu a {
+        color: #333;
+        font-size: 1rem;
+    }
+
+    .nav-menu a:hover {
+        border: 1px solid #333; /* Add a border to create the box effect */
+        border-radius: 5px; /* Optional: round the corners */
+        background-color: rgba(0, 0, 0, 0.1); /* Optional: add background for a hover effect */
+    }
+
+    .menu-toggle {
+        display: none; /* Hide menu toggle on desktop */
+    }
+}

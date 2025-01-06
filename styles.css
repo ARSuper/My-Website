@@ -28,7 +28,7 @@ header {
     display: inline-block; /* Ensure it behaves like a block element if needed */
     text-decoration: none; /* Remove underline from the link */
     color: #333; /* Match your existing site color */
-    font-size: 0.8rem; /* Adjust the font size */
+    font-size: 1.0rem; /* Adjust the font size */
     font-weight: bold; /* Keep it bold for visibility */
 }
 
