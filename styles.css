@@ -259,31 +259,34 @@ header {
 .nav-menu {
     display: none;
     flex-direction: column;
-    background: #ffffff;
+    background: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    right: 20px;
-    top: 15px;
+    position: fixed; /* Keeps the menu fixed while scrolling */
+    top: 0; /* Aligns the menu to the top of the viewport */
+    right: 0; /* Aligns the menu to the right side of the viewport */
     padding: 20px;
     border-radius: 8px;
+    z-index: 1000; /* Ensures it appears above other elements */
 }
 
 .nav-menu.visible {
-    display: flex;
+    display: flex; /* Shows the menu when toggled */
 }
 
 .nav-menu ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .nav-menu li {
-    margin-bottom: 2px;
+    margin-bottom: 0px;
 }
 
 .nav-menu a {
     text-decoration: underline;
     color: #333;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 @media (min-width: 768px) {
@@ -319,6 +322,8 @@ header {
         display: none; /* Hide menu toggle on desktop */
     }
 }
+
+
 
 /* Footer */
 footer {
