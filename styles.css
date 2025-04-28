@@ -7,9 +7,14 @@
 
 html, body {
     font-family: 'Quicksand', sans-serif;
-    background-color: #fddeff;
+    background: linear-gradient(to bottom, #eda847, #e499cd);
     color: #333;
     line-height: 1.6;
+}
+
+.header-content {
+    flex: 1; /* take up all available space */
+    text-align: center;
 }
 
 /* Header Styles */
@@ -17,18 +22,16 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #fddeff;
+    background: radial-gradient(to bottom, #eda847, #e499cd);
     padding: 20px;
     margin-left: 2.9rem;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    border-bottom: 2px solid black;
 }
 
 .site-title {
     display: inline-block; /* Ensure it behaves like a block element if needed */
     text-decoration: none; /* Remove underline from the link */
     color: #333; /* Match your existing site color */
-    font-size: 1.0rem; /* Adjust the font size */
+    font-size: 0.5rem; /* Adjust the font size */
     font-weight: bold; /* Keep it bold for visibility */
 }
 
@@ -37,8 +40,10 @@ header {
     color: #555; /* Optional: Adjust hover color */
 }
 
-.logo {
-    width: 50px;
+.site-logo {
+    width: 200px;
+    height: auto;
+    display: inline-block;
 }
 
 .menu-toggle {
